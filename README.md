@@ -1,13 +1,16 @@
 # iTracker
 
 
-A set of scripts that allow you to collect and interpret information about your iPhone
+A set of scripts that allow you to collect and interpret information about your iDevice
 
 While this project was made to be deployed on a Raspberry Pi, it can be used on OSX and Windows with little difficulty
 
 
+
 # How to use tracker.py
 
+
+This script will collect location and status data from an iDevice
 
 1. Install pyicloud (https://pypi.org/project/pyicloud/) for python3
 2. Put your AppleID credentials on lines 5 and 6 (These are only sent to Apple, they are not stored)
@@ -33,3 +36,15 @@ On line 10, you can adjust the frequency at which the script will collect data a
 On lines 12 through 16, you can indicate how and where to save the collected data
 
 On lines 18 and 19, you can indicate if you want to be notified every time data is collected (this is only recommended if the data collection frequency is higher than 1500)
+
+
+
+# How to use parser.py
+
+
+This script will take csv data from tracker.py and sort it by location from most frequent in the dataset to least frequent
+
+1. Get a reverse geocoding api key from https://positionstack.com
+2. Put your api key on line 8
+3. Specify the file that you want the script to read from on line 6
+4. Uh... run the script and read the output with your eyeballs
