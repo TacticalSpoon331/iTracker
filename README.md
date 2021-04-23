@@ -26,7 +26,7 @@ iTracker = PyiCloudService(APPLEID_EMAIL, APPLEID_PASSWORD)
 
 print(iTracker.devices)
 ```
-The script above will give you a readout of your devices and their IDs
+The code above will give you a readout of your devices and their IDs
 
 5. After running the script for the first time, if you have mfa enabled, you will have to authenticate via a code sent to one of your iDevices
 6. While runnng, the script will give you data about your device every 300 seconds by default
