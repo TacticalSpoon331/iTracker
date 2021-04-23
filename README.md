@@ -27,6 +27,9 @@ The script above will give you a readout of your devices and their IDs
 
 5. After running the script for the first time, if you have mfa enabled, you will have to authenticate via a code sent to one of your iDevices
 6. While runnng, the script will give you data about your device every 300 seconds by default
+
 You can adjust the frequency at which the script will collect data about your device on line 10
+
 On lines 12 through 16, you can indicate how and where to save the collected data
+
 On lines 18 and 19, you can indicate if you want to be notified every time data is collected (this is only recommended if the data collection frequency is higher than 1500)
