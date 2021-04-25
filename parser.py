@@ -5,13 +5,14 @@ from progress.bar import Bar
 os.system('clear')
 
 csv_data_filename = 'location_data.csv'
+data_collection_frequency = 300
 
-API_KEY = 'PUT YOUR POSITIONSTACK REVERSE GEOCODING API KEY HERE'
-
+API_KEY = ''
 
 locations = []
 
 line_count = len(open(csv_data_filename).readlines(  ))
+
 bar = Bar('Processing location data  ', max=line_count)
 
 with open(csv_data_filename) as csv_file:
@@ -30,6 +31,7 @@ with open(csv_data_filename) as csv_file:
 			pass
 bar.finish()
 
+
 results = [item for items, c in Counter(locations).most_common()
                                       for item in [items] * c]
 locations.clear()
@@ -41,7 +43,19 @@ os.system('clear')
 
 print('Locations in dataset, sorted by frequency:\n\n')
 for location in results:
-	if (location.split(",")[-1]) == '1':
-		print(f'{(location.split(",")[0])}: in dataset {(location.split(",")[-1])} time\n')
+	instance_count = int(location.split(",")[-1])
+
+	time = instance_count * data_collection_frequency
+
+	day = time // (24 * 3600)
+	time = time % (24 * 3600)
+	hour = time // 3600
+	time %= 3600
+	minute = time // 60
+	time %= 60
+	second = time
+
+	if day == 0 and hour == 0 and minute < 10:
+		pass
 	else:
-		print(f'{(location.split(",")[0])}: in dataset {(location.split(",")[-1])} times\n')
+		print(f'{(location.split(",")[0])}: in dataset {instance_count} times ({int(day)} days, {int(hour)} hours, {int(minute)} minutes, and {int(second)} seconds)\n')
