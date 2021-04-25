@@ -52,10 +52,8 @@ for location in results:
 	hour = time // 3600
 	time %= 3600
 	minute = time // 60
-	time %= 60
-	second = time
 
 	if day == 0 and hour == 0 and minute < 45:
 		pass
 	else:
-		print(f'{(location.split(",")[0])}: in dataset {instance_count} times ({int(day)} days, {int(hour)} hours, {int(minute)} minutes, and {int(second)} seconds)\n')
+		print(f'{(location.split(",")[0])}: in dataset {instance_count} times ({int(day)} days, {int(hour)} hours, {int(minute)} minutes)\n')
