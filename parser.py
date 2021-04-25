@@ -9,8 +9,10 @@ data_collection_frequency = 300
 
 API_KEY = ''
 
+
 locations = []
 
+# line_count = 0
 line_count = len(open(csv_data_filename).readlines(  ))
 
 bar = Bar('Processing location data  ', max=line_count)
