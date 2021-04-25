@@ -1,7 +1,7 @@
 # iTracker
 
 
-A set of scripts that allow you to collect and interpret information about your iDevice
+A set of scripts that allow you to collect and interpret information about your iDevice through Find My services
 
 While this project was made to be deployed on a Raspberry Pi, it can be used on OSX and Windows with little difficulty
 
