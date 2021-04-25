@@ -45,6 +45,7 @@ On lines 18 and 19, you can indicate if you want to be notified every time data 
 This script will take csv data from tracker.py and sort it by location from most frequent in the dataset to least frequent
 
 1. Get a reverse geocoding api key from https://positionstack.com
-2. Put your api key on line 8
-3. Specify the file that you want the script to read from on line 6
-4. Uh... run the script and read the output with your eyeballs
+2. Put your api key on line 10
+3. The data collection frequency value on line 8 will help determine the length of time that the device was at a certain location (should be the same as line 10 in tracker.py for the highest accuracy)
+4. Specify the file that you want the script to read from on line 6
+5. Uh... run the script and read the output with your eyeballs
