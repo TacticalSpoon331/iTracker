@@ -55,7 +55,7 @@ for location in results:
 	time %= 60
 	second = time
 
-	if day == 0 and hour == 0 and minute < 10:
+	if day == 0 and hour == 0 and minute < 45:
 		pass
 	else:
 		print(f'{(location.split(",")[0])}: in dataset {instance_count} times ({int(day)} days, {int(hour)} hours, {int(minute)} minutes, and {int(second)} seconds)\n')
