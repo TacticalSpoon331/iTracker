@@ -5,6 +5,8 @@ from progress.bar import Bar
 os.system('clear')
 
 csv_data_filename = 'location_data.csv'
+data_output_filename = 'parsed_data.csv'
+
 data_collection_frequency = 300
 
 API_KEY = ''
@@ -12,9 +14,12 @@ API_KEY = ''
 
 locations = []
 
-# line_count = 0
-line_count = len(open(csv_data_filename).readlines(  ))
+if os.path.exists(data_output_filename):
+	os.remove(data_output_filename)
 
+f = open(data_output_filename, "x")
+
+line_count = len(open(csv_data_filename).readlines(  ))
 bar = Bar('Processing location data  ', max=line_count)
 
 with open(csv_data_filename) as csv_file:
@@ -43,6 +48,12 @@ results = [i for n, i in enumerate(locations) if i not in locations[:n]]
 
 os.system('clear')
 
+if os.path.exists(data_output_filename):
+	pass
+else:
+	f = open(data_output_filename, "x")
+
+
 print('Locations in dataset, sorted by frequency:\n\n')
 for location in results:
 	instance_count = int(location.split(",")[-1])
@@ -58,4 +69,8 @@ for location in results:
 	if day == 0 and hour == 0 and minute < 45:
 		pass
 	else:
-		print(f'{(location.split(",")[0])}: in dataset {instance_count} times ({int(day)} days, {int(hour)} hours, {int(minute)} minutes)\n')
+		data = f'{(location.split(",")[0])}: in dataset {instance_count} times ({int(day)} days, {int(hour)} hours, {int(minute)} minutes)\n'
+		print(data)
+		f = open(data_output_filename, "a")
+		f.write(data)
+		f.close()
