@@ -5,7 +5,7 @@ from progress.bar import Bar
 os.system('clear')
 
 csv_data_filename = 'location_data.csv'
-data_output_filename = 'parsed_data.csv'
+data_output_filename = 'parsed_data.txt'
 
 data_collection_frequency = 300
 
